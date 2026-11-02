@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Isombe Recipe — Tastes of Africa</title>
+    <meta
+      name="description"
+      content="Pounded cassava leaves slow-cooked with eggplant and peanuts."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Manrope:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script>
+      try {
+        document.documentElement.dataset.theme = localStorage.getItem("toa-theme") || "dark";
+      } catch (e) {
+        document.documentElement.dataset.theme = "dark";
+      }
+    </script>
+    <script src="js/script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="wrap nav" aria-label="Main navigation">
+        <a class="logo" href="index.html">
+          Tastes
+          <span class="gold">of Africa</span>
+        </a>
+        <ul class="links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="recipes.html" aria-current="page">Recipes</a></li>
+          <li><a href="regions.html">Regions</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="tools">
+          <a class="favpill" href="recipes.html" aria-label="Favorites">
+            <span class="heart">
+              <svg class="ico filled" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"
+                />
+              </svg>
+            </span>
+            <span class="fav-count">0</span>
+          </a>
+          <button
+            class="icon-btn"
+            id="theme-toggle"
+            type="button"
+            aria-label="Switch to light mode"
+          >
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2" />
+              <path d="M12 20v2" />
+              <path d="m4.93 4.93 1.41 1.41" />
+              <path d="m17.66 17.66 1.41 1.41" />
+              <path d="M2 12h2" />
+              <path d="M20 12h2" />
+              <path d="m6.34 17.66-1.41 1.41" />
+              <path d="m19.07 4.93-1.41 1.41" />
+            </svg>
+          </button>
+          <button
+            class="icon-btn"
+            id="menu-btn"
+            type="button"
+            aria-expanded="false"
+            aria-controls="mobile-nav"
+            aria-label="Toggle menu"
+          >
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+              <line x1="4" x2="20" y1="12" y2="12" />
+              <line x1="4" x2="20" y1="6" y2="6" />
+              <line x1="4" x2="20" y1="18" y2="18" />
+            </svg>
+          </button>
+        </div>
+      </nav>
+      <ul class="mobile-nav" id="mobile-nav" hidden>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="recipes.html">Recipes</a></li>
+        <li><a href="regions.html">Regions</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </header>
+    <main>
+      <article class="wrap" style="padding-top: 8rem">
+        <a class="back" href="recipes.html">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m12 19-7-7 7-7" />
+            <path d="M19 12H5" />
+          </svg>
+          All recipes
+        </a>
+        <div class="recipe-top">
+          <div class="fade-up">
+            <p class="eyebrow">Rwanda · East Africa</p>
+            <h1>Isombe</h1>
+            <p class="tagline">Pounded cassava leaves slow-cooked with eggplant and peanuts.</p>
+            <p class="desc">
+              A beloved dish across Rwanda and Burundi, isombe turns humble
+              <mark>cassava leaves</mark>
+              into a creamy, earthy stew. Often enriched with
+              <mark>peanut paste</mark>
+              and palm oil, it is served alongside plantains or ugali at family gatherings.
+            </p>
+            <div class="meta">
+              <span>
+                <svg class="ico gold-ico" viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+                2h
+              </span>
+              <span>
+                <svg class="ico gold-ico" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+                Serves 5
+              </span>
+              <span>
+                <svg class="ico gold-ico" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                Rwanda
+              </span>
+              <button class="fav-btn inline" type="button" data-id="isombe" aria-pressed="false">
+                <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"
+                  />
+                </svg>
+                Favorite
+              </button>
+            </div>
+          </div>
+          <img
+            src="images/isombe.jpg"
+            alt="Isombe, a traditional dish from Rwanda"
+            width="1024"
+            height="1024"
+          />
+        </div>
+        <div class="recipe-body">
+          <aside>
+            <h2>Ingredients</h2>
+            <div class="scaler">
+              <span id="serv-label">Servings</span>
+              <button id="serv-minus" type="button" aria-label="Fewer servings">−</button>
+              <output id="servings" data-base="5" aria-labelledby="serv-label">5</output>
+              <button id="serv-plus" type="button" aria-label="More servings">+</button>
+            </div>
+            <ul class="ing-list">
+              <li>
+                <span>
+                  <span class="qty" data-qty="500">500</span>
+                  g cassava leaves, pounded
+                </span>
+              </li>
+              <li>
+                <span>
+                  <span class="qty" data-qty="1">1</span>
+                  eggplant, diced
+                </span>
+              </li>
+              <li>
+                <span>
+                  <span class="qty" data-qty="1">1</span>
+                  cup peanut paste
+                </span>
+              </li>
+              <li>
+                <span>
+                  <span class="qty" data-qty="2">2</span>
+                  tbsp palm oil
+                </span>
+              </li>
+              <li>
+                <span>
+                  <span class="qty" data-qty="1">1</span>
+                  onion
+                </span>
+              </li>
+              <li>
+                <span>
+                  <span class="qty" data-qty="1">1</span>
+                  green pepper
+                </span>
+              </li>
+              <li><span>Spinach (optional), salt</span></li>
+            </ul>
+            <div class="nutrition">
+              <h3>
+                Nutrition
+                <small>(per serving)</small>
+              </h3>
+              <table>
+                <tbody>
+                  <tr>
+                    <th scope="row">Calories</th>
+                    <td>340 kcal</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Carbs</th>
+                    <td>22 g</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Protein</th>
+                    <td>12 g</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Fat</th>
+                    <td>22 g</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </aside>
+          <div class="stack">
+            <details open>
+              <summary>
+                Cooking instructions
+                <span>+</span>
+              </summary>
+              <ol>
+                <li>
+                  <b>01</b>
+                  <p>Boil pounded cassava leaves in water for at least 1 hour.</p>
+                </li>
+                <li>
+                  <b>02</b>
+                  <p>Add onion, pepper and eggplant; continue simmering.</p>
+                </li>
+                <li>
+                  <b>03</b>
+                  <p>Stir in peanut paste loosened with a little water.</p>
+                </li>
+                <li>
+                  <b>04</b>
+                  <p>Finish with palm oil and salt; cook until thick and creamy.</p>
+                </li>
+              </ol>
+            </details>
+            <div>
+              <h2>Video tutorial</h2>
+              <div class="video">
+                <iframe
+                  src="https://www.youtube.com/embed/0EbJOwN76z0"
+                  title="Isombe tutorial"
+                  loading="lazy"
+                  allow="accelerometer; encrypted-media; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+            <div>
+              <h2>Where it comes from</h2>
+              <div class="map">
+                <iframe
+                  src="https://maps.google.com/maps?q=Kigali%2C%20Rwanda&z=5&output=embed"
+                  title="Map of Rwanda"
+                  loading="lazy"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+    <footer class="site-footer">
+      <div class="wrap footer-grid">
+        <div>
+          <h2>
+            A continent of
+            <em class="gold">flavour</em>
+            , in your inbox.
+          </h2>
+          <p class="muted">One recipe and one story, every month.</p>
+        </div>
+        <form class="nl-form" id="newsletter">
+          <label for="nl" class="sr-only">Email</label>
+          <input class="field" id="nl" type="email" required placeholder="you@email.com" />
+          <button class="btn-gold" type="submit">Subscribe</button>
+        </form>
+      </div>
+      <p class="copyright">© 2026 Tastes of Africa · Celebrating African culinary heritage</p>
+    </footer>
+  </body>
+</html>
