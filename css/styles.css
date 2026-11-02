@@ -1,0 +1,299 @@
+/* ---------- 1. Design tokens (dark by default, light via [data-theme]) ---------- */
+:root {
+  --radius: 1rem;
+  --background: oklch(0.17 0.015 50);
+  --foreground: oklch(0.95 0.02 80);
+  --card: oklch(0.21 0.018 50);
+  --secondary: oklch(0.26 0.02 50);
+  --primary: oklch(0.8 0.15 75);
+  --primary-foreground: oklch(0.18 0.02 50);
+  --primary-glow: oklch(0.86 0.13 85);
+  --muted-foreground: oklch(0.72 0.03 70);
+  --accent: oklch(0.55 0.17 32);
+  --accent-foreground: oklch(0.97 0.01 80);
+  --destructive: oklch(0.62 0.22 27);
+  --border: oklch(0.32 0.02 55);
+  --gradient-gold: linear-gradient(120deg, var(--primary), var(--primary-glow), var(--accent));
+  --shadow-card: 0 30px 60px -30px oklch(0 0 0 / 0.7);
+  --shadow-glow: 0 10px 40px -10px color-mix(in oklab, var(--primary) 50%, transparent);
+}
+[data-theme="light"] {
+  --background: oklch(0.97 0.015 80);
+  --foreground: oklch(0.22 0.02 50);
+  --card: oklch(0.995 0.008 80);
+  --secondary: oklch(0.93 0.02 80);
+  --primary: oklch(0.62 0.15 55);
+  --primary-foreground: oklch(0.99 0.01 80);
+  --primary-glow: oklch(0.5 0.14 50);
+  --muted-foreground: oklch(0.45 0.03 55);
+  --border: oklch(0.86 0.02 75);
+  --shadow-card: 0 20px 40px -25px oklch(0.3 0.05 50 / 0.35);
+}
+/* Elements that sit on top of photos always keep the dark-theme colours */
+.on-img {
+  --foreground: oklch(0.95 0.02 80);
+  --muted-foreground: oklch(0.78 0.03 70);
+  --primary: oklch(0.8 0.15 75);
+  --gradient-gold: linear-gradient(120deg, oklch(0.8 0.15 75), oklch(0.86 0.13 85), oklch(0.6 0.17 32));
+  color: var(--foreground);
+}
+
+/* ---------- 2. Base ---------- */
+*, *::before, *::after { box-sizing: border-box; border-color: var(--border); }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; background: var(--background); color: var(--foreground);
+  font: 1rem/1.7 "Manrope", system-ui, sans-serif; -webkit-font-smoothing: antialiased;
+  transition: background 0.3s, color 0.3s;
+}
+h1, h2, h3, h4 { font-family: "Fraunces", Georgia, serif; font-weight: 400; line-height: 1.1; letter-spacing: -0.02em; margin: 0; }
+p { margin: 0; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+button { font: inherit; color: inherit; cursor: pointer; }
+mark { background: color-mix(in oklab, var(--primary) 22%, transparent); color: var(--primary-glow); padding: 0 0.3em; border-radius: 0.3em; }
+::selection { background: var(--primary); color: var(--primary-foreground); }
+[hidden], .hidden { display: none !important; }
+:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; }
+
+.wrap { width: 100%; max-width: 80rem; margin-inline: auto; padding-inline: 1.5rem; }
+.section { padding-block: 7rem; }
+.section-sm { padding-block: 3rem; }
+.eyebrow { font-size: 0.72rem; letter-spacing: 0.28em; text-transform: uppercase; font-weight: 700; color: var(--primary); }
+.gold { background: var(--gradient-gold); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.muted { color: var(--muted-foreground); }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Section headings */
+.section-head { margin-bottom: 3rem; max-width: 42rem; }
+.section-head h2 { margin-top: 0.75rem; font-size: clamp(2.25rem, 5vw, 3rem); }
+.section-head p { margin-top: 1rem; font-size: 1.125rem; color: var(--muted-foreground); }
+
+/* ---------- Line icons (replace emojis) ---------- */
+.ico { width: 1rem; height: 1rem; flex: none; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.ico.filled { fill: currentColor; }
+.gold-ico { color: var(--primary); }
+
+/* ---------- 3. Buttons & form fields ---------- */
+.btn-gold, .btn-ghost {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  border-radius: 999px; padding: 0.8rem 1.6rem; transition: transform 0.2s, filter 0.2s, border-color 0.2s, background 0.2s;
+}
+.btn-gold { font-weight: 700; border: 0; background: var(--gradient-gold); color: var(--primary-foreground); box-shadow: var(--shadow-glow); }
+.btn-gold:hover { transform: translateY(-2px); filter: brightness(1.08); }
+.btn-ghost { font-weight: 600; background: transparent; border: 1px solid color-mix(in oklab, var(--foreground) 30%, transparent); }
+.btn-ghost:hover { border-color: var(--primary); background: color-mix(in oklab, var(--primary) 10%, transparent); }
+.field {
+  width: 100%; border-radius: 0.9rem; border: 1px solid var(--border); background: var(--background);
+  padding: 0.8rem 1rem; color: var(--foreground); font: inherit; outline: none; transition: border-color 0.2s, box-shadow 0.2s;
+}
+.field:focus { border-color: var(--primary); box-shadow: 0 0 0 4px color-mix(in oklab, var(--primary) 25%, transparent); }
+textarea.field { resize: none; }
+
+/* ---------- 4. Header / navigation ---------- */
+.site-header {
+  position: fixed; inset: 0 0 auto 0; z-index: 50; border-bottom: 1px solid color-mix(in oklab, var(--border) 50%, transparent);
+  background: color-mix(in oklab, var(--background) 70%, transparent); backdrop-filter: blur(20px);
+}
+.nav { display: flex; align-items: center; justify-content: space-between; padding-block: 1rem; }
+.logo { font-family: "Fraunces", serif; font-size: 1.25rem; font-weight: 600; letter-spacing: -0.02em; }
+.links { display: flex; gap: 0.25rem; }
+.links a { display: block; padding: 0.5rem 1rem; border-radius: 999px; font-size: 0.875rem; color: var(--muted-foreground); transition: color 0.2s, background 0.2s; }
+.links a:hover { color: var(--foreground); background: var(--secondary); text-decoration: underline; text-underline-offset: 6px; }
+.links a[aria-current="page"] { color: var(--primary); }
+.tools { display: flex; align-items: center; gap: 0.75rem; }
+.favpill, .icon-btn {
+  display: inline-flex; align-items: center; gap: 0.5rem; border: 1px solid var(--border); border-radius: 999px;
+  padding: 0.375rem 0.75rem; font-size: 0.875rem; background: transparent; transition: border-color 0.2s;
+}
+.favpill:hover, .icon-btn:hover { border-color: var(--primary); }
+.icon-btn { padding: 0.45rem; }
+.btn-gold .ico { width: 1rem; height: 1rem; }
+.favpill .heart { display: inline-flex; color: var(--accent); }
+#menu-btn { display: none; }
+.mobile-nav { border-top: 1px solid var(--border); padding: 1rem 1.5rem; }
+.mobile-nav a { display: block; padding: 0.5rem 0; font: 1.125rem "Fraunces", serif; }
+
+/* ---------- 5. Hero (home) ---------- */
+.hero { position: relative; display: flex; align-items: flex-end; min-height: 100vh; overflow: hidden; }
+.hero .bgimg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, oklch(0.12 0.01 50 / 0.35) 0%, oklch(0.12 0.01 50 / 0.6) 55%, oklch(0.17 0.015 50) 100%); }
+.hero-grid { position: relative; display: grid; grid-template-columns: 1.3fr 1fr; gap: 3rem; align-items: end; padding-top: 10rem; padding-bottom: 5rem; }
+.hero h1 { margin-top: 1.25rem; font-size: clamp(3.25rem, 8vw, 6rem); }
+.hero .lead { margin-top: 1.5rem; max-width: 36rem; font-size: 1.125rem; color: var(--muted-foreground); }
+.btns { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
+
+/* ---------- 6. Media (videos & maps) ---------- */
+.video, .map { overflow: hidden; border: 1px solid var(--border); border-radius: 1.5rem; box-shadow: var(--shadow-card); }
+.video { aspect-ratio: 16 / 9; }
+.map { aspect-ratio: 16 / 10; }
+.video iframe, .map iframe { width: 100%; height: 100%; border: 0; display: block; }
+[data-theme="dark"] .map iframe { filter: grayscale(60%) invert(90%) hue-rotate(180deg); } /* blend map into dark theme */
+
+/* ---------- 7. Recipe cards ---------- */
+.grid-4 { display: grid; gap: 1.5rem; grid-template-columns: repeat(4, 1fr); }
+.grid-3 { display: grid; gap: 1.5rem; grid-template-columns: repeat(3, 1fr); }
+.rcard { position: relative; margin: 0; overflow: hidden; border: 1px solid var(--border); border-radius: 1.5rem; background: var(--card); box-shadow: var(--shadow-card); transition: transform 0.5s; }
+.rcard:hover { transform: translateY(-4px); }
+.rimg { aspect-ratio: 4 / 5; overflow: hidden; }
+.rimg img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s; }
+.rcard:hover .rimg img { transform: scale(1.05); }
+.shade { position: absolute; inset: 0; background: linear-gradient(to top, oklch(0.17 0.015 50), oklch(0.17 0.015 50 / 0.3), transparent); }
+.rcard figcaption { position: absolute; inset: auto 0 0 0; padding: 1.5rem; }
+.rcard h3 { margin-top: 0.5rem; font-size: 1.875rem; }
+.rcard h3 a { display: flex; align-items: center; justify-content: space-between; }
+.rcard h3 a::after { content: ""; position: absolute; inset: 0; z-index: 1; } /* whole card is clickable */
+.rcard .arrow { width: 1.5rem; height: 1.5rem; color: var(--primary); transition: transform 0.3s; }
+.rcard:hover .arrow { transform: rotate(45deg); }
+.rcard .tag { margin-top: 0.5rem; font-size: 0.875rem; color: var(--muted-foreground); }
+.rcard .time { display: flex; align-items: center; gap: 0.375rem; margin-top: 0.75rem; font-size: 0.75rem; color: var(--muted-foreground); }
+.fav-btn {
+  position: absolute; top: 1rem; right: 1rem; z-index: 2; display: inline-flex; align-items: center; gap: 0.375rem;
+  border: 1px solid var(--border); border-radius: 999px; padding: 0.375rem 0.75rem; font-size: 0.75rem; font-weight: 600;
+  background: color-mix(in oklab, oklch(0.17 0.015 50) 60%, transparent); color: oklch(0.95 0.02 80); backdrop-filter: blur(8px); transition: all 0.2s;
+}
+.fav-btn:hover { border-color: var(--accent); }
+.fav-btn.on { background: var(--accent); border-color: var(--accent); color: var(--accent-foreground); }
+.fav-btn .ico { width: 0.875rem; height: 0.875rem; }
+.fav-btn.inline { position: static; color: var(--foreground); background: transparent; }
+.fav-btn.inline.on { color: var(--accent-foreground); background: var(--accent); }
+
+/* ---------- 8. Region tiles / rows ---------- */
+.rtile { position: relative; display: block; overflow: hidden; border: 1px solid var(--border); border-radius: 1.5rem; background: var(--dark, oklch(0.17 0.015 50)); }
+.rtile img { width: 100%; height: 20rem; object-fit: cover; opacity: 0.6; transition: transform 0.7s, opacity 0.7s; }
+.rtile:hover img { transform: scale(1.05); opacity: 0.8; }
+.rtile-text { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 1.75rem; background: linear-gradient(to top, oklch(0.17 0.015 50), transparent); }
+.rtile .num { font: 0.875rem "Fraunces", serif; color: var(--primary); }
+.rtile h3 { font-size: 1.875rem; }
+.rtile p { margin-top: 0.25rem; font-size: 0.875rem; color: var(--muted-foreground); }
+.rrow { display: grid; grid-template-columns: 1fr 1.4fr; overflow: hidden; border: 1px solid var(--border); border-radius: 1.5rem; background: var(--card); margin-bottom: 1.5rem; transition: border-color 0.2s; }
+.rrow:hover { border-color: var(--primary); }
+.rrow img { width: 100%; height: 100%; min-height: 18rem; object-fit: cover; }
+.rrow .body { padding: 2.5rem; }
+.rrow .num { font-family: "Fraunces", serif; color: var(--primary); }
+.rrow h2 { margin-top: 0.5rem; font-size: 3rem; }
+.rrow .body > p { margin-top: 1rem; color: var(--muted-foreground); }
+.rrow .chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+.rrow .more { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 2rem; font-weight: 600; color: var(--primary); }
+.panel { border: 1px solid var(--border); border-radius: 1.5rem; background: var(--card); padding: 2rem; }
+.panel h2 { font-size: 1.5rem; }
+.panel .chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.25rem; }
+.chip { border: 1px solid var(--border); border-radius: 999px; padding: 0.25rem 0.75rem; font-size: 0.875rem; }
+
+/* ---------- 9. Trends (articles) ---------- */
+.trends { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; overflow: hidden; border: 1px solid var(--border); border-radius: 1.5rem; background: var(--border); }
+.trends article { background: var(--card); padding: 2rem; transition: background 0.2s; }
+.trends article:hover { background: var(--secondary); }
+.trends h3 { margin-top: 1rem; font-size: 1.5rem; }
+.trends p { margin-top: 0.75rem; color: var(--muted-foreground); }
+.trends time { font-size: 0.72rem; letter-spacing: 0.28em; text-transform: uppercase; font-weight: 700; color: var(--primary); }
+
+/* ---------- 10. Inner-page hero ---------- */
+.page-hero { padding-top: 10rem; padding-bottom: 4rem; }
+.page-hero h1 { margin-top: 1rem; max-width: 56rem; font-size: clamp(3rem, 7vw, 4.5rem); }
+.page-hero p.intro { margin-top: 1.5rem; max-width: 42rem; font-size: 1.125rem; color: var(--muted-foreground); }
+
+/* ---------- 11. Recipes page: filter bar ---------- */
+.filters { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2.5rem; }
+.filter-btn { border: 1px solid var(--border); border-radius: 999px; padding: 0.5rem 1.25rem; font-size: 0.875rem; font-weight: 600; background: transparent; color: var(--muted-foreground); transition: all 0.2s; }
+.filter-btn:hover { border-color: var(--primary); color: var(--foreground); }
+.filter-btn.active { border-color: var(--primary); background: var(--primary); color: var(--primary-foreground); }
+.empty { padding: 3rem 0; color: var(--muted-foreground); }
+
+/* ---------- 12. Single recipe page ---------- */
+.back { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.875rem; color: var(--muted-foreground); }
+.back:hover { color: var(--primary); }
+.recipe-top { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; margin-top: 2rem; }
+.recipe-top h1 { margin-top: 1rem; font-size: clamp(3rem, 6vw, 4.5rem); }
+.recipe-top .tagline { margin-top: 1rem; font-size: 1.25rem; color: var(--primary-glow); }
+.recipe-top .desc { margin-top: 1.5rem; color: var(--muted-foreground); }
+.meta span { display: inline-flex; align-items: center; gap: 0.5rem; }
+.meta { display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem; margin-top: 2rem; font-size: 0.875rem; }
+.recipe-top img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 1.5rem; box-shadow: var(--shadow-card); }
+.recipe-body { display: grid; grid-template-columns: 1fr 1.4fr; gap: 3rem; margin-top: 6rem; }
+.recipe-body aside { height: fit-content; position: sticky; top: 7rem; border: 1px solid var(--border); border-radius: 1.5rem; background: var(--card); padding: 2rem; }
+.recipe-body h2 { font-size: 1.875rem; }
+.scaler { display: flex; align-items: center; gap: 0.75rem; margin-top: 1.25rem; font-size: 0.875rem; }
+.scaler button { width: 2rem; height: 2rem; border-radius: 50%; border: 1px solid var(--border); background: transparent; }
+.scaler button:hover { border-color: var(--primary); color: var(--primary); }
+.scaler output { min-width: 2ch; text-align: center; font-weight: 700; }
+.ing-list { margin-top: 1.25rem; }
+.ing-list li { display: flex; gap: 0.75rem; padding-bottom: 0.75rem; margin-bottom: 0.75rem; border-bottom: 1px solid color-mix(in oklab, var(--border) 60%, transparent); }
+.ing-list li:last-child { border: 0; margin: 0; padding: 0; }
+.ing-list li::before { content: ""; flex: none; width: 6px; height: 6px; margin-top: 0.7rem; border-radius: 50%; background: var(--primary); }
+.nutrition { margin-top: 2.5rem; }
+.nutrition h3 { font-size: 1.5rem; }
+.nutrition h3 small { font: 0.875rem "Manrope", sans-serif; color: var(--muted-foreground); }
+table { width: 100%; margin-top: 1rem; font-size: 0.875rem; border-collapse: collapse; }
+th, td { padding: 0.5rem 0; border-bottom: 1px solid color-mix(in oklab, var(--border) 60%, transparent); }
+th { text-align: left; font-weight: 500; color: var(--muted-foreground); }
+td { text-align: right; font-weight: 600; }
+tr:last-child th, tr:last-child td { border: 0; }
+details { border: 1px solid var(--border); border-radius: 1.5rem; background: var(--card); padding: 2rem; }
+summary { display: flex; align-items: center; justify-content: space-between; cursor: pointer; list-style: none; font: 1.875rem "Fraunces", serif; }
+summary::-webkit-details-marker { display: none; }
+summary span { color: var(--primary); transition: transform 0.2s; }
+details[open] summary span { transform: rotate(45deg); }
+details ol { margin-top: 1.5rem; display: grid; gap: 1.25rem; }
+details li { display: flex; gap: 1.25rem; }
+details li b { font: 1.875rem "Fraunces", serif; font-weight: 400; color: var(--primary); }
+details li p { padding-top: 0.4rem; }
+.stack > * + * { margin-top: 3rem; }
+.stack h2 { margin-bottom: 1.25rem; }
+
+/* ---------- 13. About ---------- */
+.mission { margin: 0; border: 1px solid var(--border); border-radius: 1.5rem; background: var(--card); padding: 4rem; font: clamp(1.75rem, 3vw, 2.25rem)/1.3 "Fraunces", serif; }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; padding-block: 6rem; }
+.about-grid h2 { margin-top: 0.75rem; font-size: 2.25rem; }
+.timeline { margin-top: 2.5rem; padding-left: 2rem; border-left: 1px solid var(--border); display: grid; gap: 2rem; }
+.timeline li { position: relative; }
+.timeline li::before { content: ""; position: absolute; left: -2.35rem; top: 0.5rem; width: 12px; height: 12px; border-radius: 50%; background: var(--primary); box-shadow: var(--shadow-glow); }
+.timeline h3 { font-size: 1.25rem; color: var(--primary); }
+.timeline p { margin-top: 0.25rem; color: var(--muted-foreground); }
+
+/* ---------- 14. Contact form ---------- */
+.contact { max-width: 48rem; margin-inline: auto; padding-inline: 1.5rem; }
+.form { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; border: 1px solid var(--border); border-radius: 1.5rem; background: var(--card); padding: 3rem; }
+.form .full { grid-column: 1 / -1; }
+.form label { display: block; margin-bottom: 0.5rem; font-size: 0.875rem; font-weight: 600; }
+.error { margin-top: 0.5rem; font-size: 0.875rem; color: var(--destructive); }
+.thanks { border: 1px solid var(--primary); border-radius: 1.5rem; background: var(--card); padding: 3rem; text-align: center; box-shadow: var(--shadow-glow); }
+.thanks h2 { font-size: 2.25rem; }
+.thanks p { margin-top: 0.75rem; color: var(--muted-foreground); }
+
+/* ---------- 15. Footer & newsletter ---------- */
+.site-footer { margin-top: 8rem; border-top: 1px solid var(--border); background: var(--card); }
+.footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; padding-block: 4rem; }
+.footer-grid h2 { font-size: 2.25rem; }
+.footer-grid p.muted { margin-top: 0.75rem; }
+.nl-form { display: flex; gap: 0.75rem; align-self: center; }
+.nl-form .field { flex: 1; }
+.nl-done { align-self: center; font-size: 1.125rem; color: var(--primary); }
+.copyright { border-top: 1px solid var(--border); padding: 1.5rem; text-align: center; font-size: 0.875rem; color: var(--muted-foreground); }
+
+/* ---------- 16. Animation ---------- */
+.fade-up { animation: fade-up 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+@keyframes fade-up { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+/* ---------- 17. Responsive ---------- */
+@media (max-width: 1024px) {
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .hero-grid, .recipe-top, .recipe-body, .about-grid, .footer-grid { grid-template-columns: 1fr; }
+  .recipe-body aside { position: static; }
+}
+@media (max-width: 768px) {
+  .links { display: none; }
+  #menu-btn { display: inline-flex; }
+  .section { padding-block: 4rem; }
+  .trends, .rrow, .form { grid-template-columns: 1fr; }
+  .grid-3 { grid-template-columns: 1fr; }
+  .three-col { grid-template-columns: 1fr !important; }
+  .mission, .form { padding: 2rem; }
+  .nl-form { flex-direction: column; }
+}
+@media (max-width: 560px) {
+  .grid-4 { grid-template-columns: 1fr; }
+}
