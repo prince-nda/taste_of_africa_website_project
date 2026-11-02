@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>North Africa Cuisine — Tastes of Africa</title>
+    <meta name="description" content="Berber heritage, saffron and slow clay-pot cooking." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Manrope:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script>
+      try {
+        document.documentElement.dataset.theme = localStorage.getItem("toa-theme") || "dark";
+      } catch (e) {
+        document.documentElement.dataset.theme = "dark";
+      }
+    </script>
+    <script src="js/script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="wrap nav" aria-label="Main navigation">
+        <a class="logo" href="index.html">
+          Tastes
+          <span class="gold">of Africa</span>
+        </a>
+        <ul class="links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="recipes.html">Recipes</a></li>
+          <li><a href="regions.html" aria-current="page">Regions</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="tools">
+          <a class="favpill" href="recipes.html" aria-label="Favorites">
+            <span class="heart">
+              <svg class="ico filled" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"
+                />
+              </svg>
+            </span>
+            <span class="fav-count">0</span>
+          </a>
+          <button
+            class="icon-btn"
+            id="theme-toggle"
+            type="button"
+            aria-label="Switch to light mode"
+          >
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2" />
+              <path d="M12 20v2" />
+              <path d="m4.93 4.93 1.41 1.41" />
+              <path d="m17.66 17.66 1.41 1.41" />
+              <path d="M2 12h2" />
+              <path d="M20 12h2" />
+              <path d="m6.34 17.66-1.41 1.41" />
+              <path d="m19.07 4.93-1.41 1.41" />
+            </svg>
+          </button>
+          <button
+            class="icon-btn"
+            id="menu-btn"
+            type="button"
+            aria-expanded="false"
+            aria-controls="mobile-nav"
+            aria-label="Toggle menu"
+          >
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+              <line x1="4" x2="20" y1="12" y2="12" />
+              <line x1="4" x2="20" y1="6" y2="6" />
+              <line x1="4" x2="20" y1="18" y2="18" />
+            </svg>
+          </button>
+        </div>
+      </nav>
+      <ul class="mobile-nav" id="mobile-nav" hidden>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="recipes.html">Recipes</a></li>
+        <li><a href="regions.html">Regions</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </header>
+    <main>
+      <section class="wrap page-hero">
+        <p class="eyebrow fade-up">Culinary region</p>
+        <h1 class="fade-up">North Africa</h1>
+        <p class="intro fade-up">
+          Stretching from Morocco to Egypt, North African food blends Berber, Arab, Andalusian and
+          Ottoman influences. Couscous is the beloved staple and sweet-savoury combinations define
+          the cuisine.
+        </p>
+      </section>
+      <section class="wrap grid-3 three-col">
+        <div class="panel">
+          <h2>Staples</h2>
+          <ul class="chips">
+            <li><span class="chip">Couscous</span></li>
+            <li><span class="chip">Semolina</span></li>
+            <li><span class="chip">Chickpeas</span></li>
+            <li><span class="chip">Dates</span></li>
+            <li><span class="chip">Olives</span></li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h2>Cooking techniques</h2>
+          <ul class="chips">
+            <li><mark>Tagine slow-cooking</mark></li>
+            <li><mark>Steaming couscous</mark></li>
+            <li><mark>Preserving lemons</mark></li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h2>Signature spices</h2>
+          <ul class="chips">
+            <li><mark>Ras el hanout</mark></li>
+            <li><mark>Saffron</mark></li>
+            <li><mark>Cumin</mark></li>
+            <li><mark>Harissa</mark></li>
+          </ul>
+        </div>
+      </section>
+      <section class="wrap section">
+        <h2 style="font-size: 2.25rem; margin-bottom: 1.5rem">Taste the region</h2>
+        <div class="video">
+          <iframe
+            src="https://www.youtube.com/embed/rh4TAPagwaw"
+            title="North Africa cuisine"
+            loading="lazy"
+            allow="accelerometer; encrypted-media; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </section>
+      <section class="wrap">
+        <h2 style="font-size: 2.25rem; margin-bottom: 1.5rem">Example dishes</h2>
+        <div class="grid-3">
+          <figure class="rcard on-img" data-region="north-africa" data-id="tagine">
+            <div class="rimg">
+              <img
+                src="images/tagine.jpg"
+                alt="Lamb Tagine, a traditional dish from Morocco"
+                loading="lazy"
+                width="1024"
+                height="1024"
+              />
+            </div>
+            <div class="shade"></div>
+            <figcaption>
+              <p class="eyebrow">Morocco</p>
+              <h3>
+                <a href="recipe-tagine.html">
+                  Lamb Tagine
+                  <svg class="ico arrow" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M7 7h10v10" />
+                    <path d="M7 17 17 7" />
+                  </svg>
+                </a>
+              </h3>
+              <p class="tag">Slow-cooked lamb, apricots and almonds under a clay cone.</p>
+              <p class="time">
+                <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+                2h 30m
+              </p>
+            </figcaption>
+            <button class="fav-btn" type="button" data-id="tagine" aria-pressed="false">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"
+                />
+              </svg>
+              Favorite
+            </button>
+          </figure>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="wrap footer-grid">
+        <div>
+          <h2>
+            A continent of
+            <em class="gold">flavour</em>
+            , in your inbox.
+          </h2>
+          <p class="muted">One recipe and one story, every month.</p>
+        </div>
+        <form class="nl-form" id="newsletter">
+          <label for="nl" class="sr-only">Email</label>
+          <input class="field" id="nl" type="email" required placeholder="you@email.com" />
+          <button class="btn-gold" type="submit">Subscribe</button>
+        </form>
+      </div>
+      <p class="copyright">© 2026 Tastes of Africa · Celebrating African culinary heritage</p>
+    </footer>
+  </body>
+</html>
