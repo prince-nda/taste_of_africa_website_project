@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact — Tastes of Africa</title>
+    <meta
+      name="description"
+      content="Share a recipe, story or question with the Tastes of Africa team."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Manrope:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script>
+      try {
+        document.documentElement.dataset.theme = localStorage.getItem("toa-theme") || "dark";
+      } catch (e) {
+        document.documentElement.dataset.theme = "dark";
+      }
+    </script>
+    <script src="js/script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="wrap nav" aria-label="Main navigation">
+        <a class="logo" href="index.html">
+          Tastes
+          <span class="gold">of Africa</span>
+        </a>
+        <ul class="links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="recipes.html">Recipes</a></li>
+          <li><a href="regions.html">Regions</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+        <div class="tools">
+          <a class="favpill" href="recipes.html" aria-label="Favorites">
+            <span class="heart">
+              <svg class="ico filled" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"
+                />
+              </svg>
+            </span>
+            <span class="fav-count">0</span>
+          </a>
+          <button
+            class="icon-btn"
+            id="theme-toggle"
+            type="button"
+            aria-label="Switch to light mode"
+          >
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2" />
+              <path d="M12 20v2" />
+              <path d="m4.93 4.93 1.41 1.41" />
+              <path d="m17.66 17.66 1.41 1.41" />
+              <path d="M2 12h2" />
+              <path d="M20 12h2" />
+              <path d="m6.34 17.66-1.41 1.41" />
+              <path d="m19.07 4.93-1.41 1.41" />
+            </svg>
+          </button>
+          <button
+            class="icon-btn"
+            id="menu-btn"
+            type="button"
+            aria-expanded="false"
+            aria-controls="mobile-nav"
+            aria-label="Toggle menu"
+          >
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+              <line x1="4" x2="20" y1="12" y2="12" />
+              <line x1="4" x2="20" y1="6" y2="6" />
+              <line x1="4" x2="20" y1="18" y2="18" />
+            </svg>
+          </button>
+        </div>
+      </nav>
+      <ul class="mobile-nav" id="mobile-nav" hidden>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="recipes.html">Recipes</a></li>
+        <li><a href="regions.html">Regions</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </header>
+    <main>
+      <section class="wrap page-hero">
+        <p class="eyebrow fade-up">Contact</p>
+        <h1 class="fade-up">
+          Pull up a
+          <em class="gold">chair</em>
+        </h1>
+        <p class="intro fade-up">
+          Have a family recipe, a story or a question? We'd love to hear from you.
+        </p>
+      </section>
+      <section class="contact">
+        <form class="form" id="contact-form">
+          <div>
+            <label for="name">Name</label>
+            <input class="field" id="name" name="name" type="text" required />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input class="field" id="email" name="email" type="email" required />
+          </div>
+          <div class="full">
+            <label for="country">Country</label>
+            <input
+              class="field"
+              id="country"
+              name="country"
+              list="country-list"
+              placeholder="Start typing…"
+            />
+            <datalist id="country-list">
+              <option value="Nigeria"></option>
+              <option value="Ghana"></option>
+              <option value="Senegal"></option>
+              <option value="Morocco"></option>
+              <option value="Egypt"></option>
+              <option value="Ethiopia"></option>
+              <option value="Kenya"></option>
+              <option value="Rwanda"></option>
+              <option value="South Africa"></option>
+              <option value="Other"></option>
+            </datalist>
+          </div>
+          <div class="full">
+            <label for="topic">Topic</label>
+            <select class="field" id="topic" name="topic">
+              <option>Share a recipe</option>
+              <option>General question</option>
+              <option>Partnership</option>
+            </select>
+          </div>
+          <div class="full">
+            <label for="message">Message</label>
+            <textarea class="field" id="message" name="message" rows="6" required></textarea>
+            <p class="error" id="msg-error" role="alert"></p>
+          </div>
+          <div class="full"><button class="btn-gold" type="submit">Send message</button></div>
+        </form>
+        <div class="thanks fade-up" id="thank-you" role="status" hidden>
+          <h2 id="ty-heading">Thank you!</h2>
+          <p>We've received your message.</p>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="wrap footer-grid">
+        <div>
+          <h2>
+            A continent of
+            <em class="gold">flavour</em>
+            , in your inbox.
+          </h2>
+          <p class="muted">One recipe and one story, every month.</p>
+        </div>
+        <form class="nl-form" id="newsletter">
+          <label for="nl" class="sr-only">Email</label>
+          <input class="field" id="nl" type="email" required placeholder="you@email.com" />
+          <button class="btn-gold" type="submit">Subscribe</button>
+        </form>
+      </div>
+      <p class="copyright">© 2026 Tastes of Africa · Celebrating African culinary heritage</p>
+    </footer>
+  </body>
+</html>
