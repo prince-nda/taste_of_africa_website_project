@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Southern Africa Cuisine — Tastes of Africa</title>
+    <meta name="description" content="Fire, curry and Cape Malay spice around one shared table." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Manrope:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script>
+      try {
+        document.documentElement.dataset.theme = localStorage.getItem("toa-theme") || "dark";
+      } catch (e) {
+        document.documentElement.dataset.theme = "dark";
+      }
+    </script>
+    <script src="js/script.js" defer></script>
+  </head>
+  <body>
+    <!-- Site header: logo, navigation, favorites counter, theme and menu buttons -->
+    <header class="site-header">
+      <nav class="wrap nav" aria-label="Main navigation">
+        <a class="logo" href="index.html">
+          Tastes
+          <span class="gold">of Africa</span>
+        </a>
+        <ul class="links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="recipes.html">Recipes</a></li>
+          <li><a href="regions.html" aria-current="page">Regions</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="tools">
+          <a class="favpill" href="recipes.html" aria-label="Favorites">
+            <span class="heart">
+              <svg class="ico filled" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"
+                />
+              </svg>
+            </span>
+            <span class="fav-count">0</span>
+          </a>
+          <button
+            class="icon-btn"
+            id="theme-toggle"
+            type="button"
+            aria-label="Switch to light mode"
+          >
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2" />
+              <path d="M12 20v2" />
+              <path d="m4.93 4.93 1.41 1.41" />
+              <path d="m17.66 17.66 1.41 1.41" />
+              <path d="M2 12h2" />
+              <path d="M20 12h2" />
+              <path d="m6.34 17.66-1.41 1.41" />
+              <path d="m19.07 4.93-1.41 1.41" />
+            </svg>
+          </button>
+          <button
+            class="icon-btn"
+            id="menu-btn"
+            type="button"
+            aria-expanded="false"
+            aria-controls="mobile-nav"
+            aria-label="Toggle menu"
+          >
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+              <line x1="4" x2="20" y1="12" y2="12" />
+              <line x1="4" x2="20" y1="6" y2="6" />
+              <line x1="4" x2="20" y1="18" y2="18" />
+            </svg>
+          </button>
+        </div>
+      </nav>
+      <ul class="mobile-nav" id="mobile-nav" hidden>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="recipes.html">Recipes</a></li>
+        <li><a href="regions.html">Regions</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </header>
+    <!-- Main page content -->
+    <main>
+      <section class="wrap page-hero">
+        <p class="eyebrow fade-up">Culinary region</p>
+        <h1 class="fade-up">Southern Africa</h1>
+        <p class="intro fade-up">
+          From Cape Town to Durban, Southern African food blends Indigenous, Dutch, Cape Malay and
+          Indian traditions. Maize porridge, open-fire braai and fragrant curries bring families
+          together around the same table.
+        </p>
+      </section>
+      <!-- Staples, cooking techniques and spices (spices and techniques highlighted with mark) -->
+      <section class="wrap grid-3 three-col">
+        <div class="panel">
+          <h2>Staples</h2>
+          <ul class="chips">
+            <li><span class="chip">Maize (pap)</span></li>
+            <li><span class="chip">Sorghum</span></li>
+            <li><span class="chip">Beans</span></li>
+            <li><span class="chip">Sweet potato</span></li>
+            <li><span class="chip">Bread</span></li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h2>Cooking techniques</h2>
+          <ul class="chips">
+            <li><mark>Braai (open-fire grilling)</mark></li>
+            <li><mark>Potjie (cast-iron pot stews)</mark></li>
+            <li><mark>Curry simmering</mark></li>
+            <li><mark>Biltong curing</mark></li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h2>Signature spices</h2>
+          <ul class="chips">
+            <li><mark>Durban masala</mark></li>
+            <li><mark>Peri-peri</mark></li>
+            <li><mark>Curry leaf</mark></li>
+            <li><mark>Cape Malay masala</mark></li>
+          </ul>
+        </div>
+      </section>
+      <!-- Region video -->
+      <section class="wrap section">
+        <h2 style="font-size: 2.25rem; margin-bottom: 1.5rem">Taste the region</h2>
+        <div class="video">
+          <iframe
+            src="https://www.youtube.com/embed/B5qIbFqmQvQ"
+            title="Southern Africa cuisine"
+            loading="lazy"
+            allow="accelerometer; encrypted-media; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </section>
+      <!-- Example dishes with links to their recipe pages -->
+      <section class="wrap">
+        <h2 style="font-size: 2.25rem; margin-bottom: 1.5rem">Example dishes</h2>
+        <div class="grid-3">
+          <figure class="rcard on-img" data-region="southern-africa" data-id="bunny-chow">
+            <div class="rimg">
+              <img
+                src="images/bunny.jpg"
+                alt="Bunny Chow, a traditional dish from South Africa"
+                loading="lazy"
+                width="1024"
+                height="1024"
+              />
+            </div>
+            <div class="shade"></div>
+            <figcaption>
+              <p class="eyebrow">South Africa</p>
+              <h3>
+                <a href="recipe-bunny-chow.html">
+                  Bunny Chow
+                  <svg class="ico arrow" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M7 7h10v10" />
+                    <path d="M7 17 17 7" />
+                  </svg>
+                </a>
+              </h3>
+              <p class="tag">Durban curry served in a hollowed loaf of bread.</p>
+              <p class="time">
+                <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+                1h 30m
+              </p>
+            </figcaption>
+            <button class="fav-btn" type="button" data-id="bunny-chow" aria-pressed="false">
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"
+                />
+              </svg>
+              Favorite
+            </button>
+          </figure>
+        </div>
+      </section>
+    </main>
+    <!-- Footer: newsletter signup and copyright -->
+    <footer class="site-footer">
+      <div class="wrap footer-grid">
+        <div>
+          <h2>
+            A continent of
+            <em class="gold">flavour</em>
+            , in your inbox.
+          </h2>
+          <p class="muted">One recipe and one story, every month.</p>
+        </div>
+        <form class="nl-form" id="newsletter">
+          <label for="nl" class="sr-only">Email</label>
+          <input class="field" id="nl" type="email" required placeholder="you@email.com" />
+          <button class="btn-gold" type="submit">Subscribe</button>
+        </form>
+      </div>
+      <p class="copyright">© 2026 Tastes of Africa · Celebrating African culinary heritage</p>
+    </footer>
+  </body>
+</html>
