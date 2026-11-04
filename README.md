@@ -96,4 +96,4 @@ The site is hosted with GitHub Pages: **Settings → Pages → Deploy from a bra
 
 ## Author
 
-Prince, African Leadership University (ALU)
+Prince Ndahiro
