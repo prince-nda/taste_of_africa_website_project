@@ -3,8 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Culinary Regions of Africa — Tastes of Africa</title>
-    <meta name="description" content="Explore the food cultures of West, North and East Africa." />
+    <title>Culinary Regions of Africa Tastes of Africa</title>
+    <meta
+      name="description"
+      content="Explore the food cultures of West, North, East and Southern Africa."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -22,6 +25,7 @@
     <script src="js/script.js" defer></script>
   </head>
   <body>
+    <!-- Site header: logo, navigation, favorites counter, theme and menu buttons -->
     <header class="site-header">
       <nav class="wrap nav" aria-label="Main navigation">
         <a class="logo" href="index.html">
@@ -88,14 +92,16 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </header>
+    <!-- Main page content -->
     <main>
       <section class="wrap page-hero">
         <p class="eyebrow fade-up">Culinary regions</p>
         <h1 class="fade-up">
-          Three regions, a thousand
+          Four regions, a thousand
           <em class="gold">flavours</em>
         </h1>
       </section>
+      <!-- One row per culinary region -->
       <section class="wrap">
         <a class="rrow" href="region-west-africa.html">
           <img
@@ -189,8 +195,40 @@
             </span>
           </div>
         </a>
+        <a class="rrow" href="region-southern-africa.html">
+          <img
+            src="images/bunny.jpg"
+            alt="Southern Africa cuisine"
+            loading="lazy"
+            width="1024"
+            height="1024"
+          />
+          <div class="body">
+            <span class="num">04</span>
+            <h2>Southern Africa</h2>
+            <p>
+              From Cape Town to Durban, Southern African food blends Indigenous, Dutch, Cape Malay
+              and Indian traditions. Maize porridge, open-fire braai and fragrant curries bring
+              families together around the same table.
+            </p>
+            <div class="chips">
+              <mark>Durban masala</mark>
+              <mark>Peri-peri</mark>
+              <mark>Curry leaf</mark>
+              <mark>Cape Malay masala</mark>
+            </div>
+            <span class="more">
+              Explore Southern Africa
+              <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14" />
+                <path d="m12 5 7 7-7 7" />
+              </svg>
+            </span>
+          </div>
+        </a>
       </section>
     </main>
+    <!-- Footer: newsletter signup and copyright -->
     <footer class="site-footer">
       <div class="wrap footer-grid">
         <div>
