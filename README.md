@@ -2,7 +2,7 @@
 
 A multi-page website celebrating Africa's culinary traditions, built with **HTML5, CSS3 and vanilla JavaScript**. It was created for the ALU Formative "Taste of Africa Website Project".
 
-**Live site:** 
+**Live site:** https://prince-nda.github.io/taste_of_africa_website_project/
 
 ## Pages
 
